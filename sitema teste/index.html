@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MK Bank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="authScreen">
+      <div class="auth-brand-panel">
+        <div class="brand auth-brand">
+          <div class="brand-mark" aria-hidden="true">mk</div>
+          <div>
+            <strong>MK Bank</strong>
+            <span>Private digital</span>
+          </div>
+        </div>
+        <div class="auth-copy">
+          <span class="auth-kicker">Conta segura</span>
+          <h1>Seu banco completo em uma experiencia premium.</h1>
+          <p>Acesse Pix, cartoes, investimentos, credito e atendimento em um ambiente protegido por MK Token.</p>
+        </div>
+        <div class="auth-metrics">
+          <div><strong>24h</strong><span>monitoramento</span></div>
+          <div><strong>928</strong><span>score MK</span></div>
+          <div><strong>Prime</strong><span>atendimento</span></div>
+        </div>
+      </div>
+
+      <div class="login-panel">
+        <div class="login-head">
+          <span class="small-label">Acesso do cliente</span>
+          <h2>Entrar no MK Bank</h2>
+        </div>
+        <form class="login-form" id="loginForm">
+          <div class="field full">
+            <label for="loginUser">CPF ou e-mail</label>
+            <input id="loginUser" name="loginUser" autocomplete="username" placeholder="marina.ribeiro@email.com" required />
+          </div>
+          <div class="field full">
+            <label for="loginPassword">Senha</label>
+            <div class="password-field">
+              <input id="loginPassword" name="loginPassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+              <button type="button" class="icon-button" id="passwordToggle" aria-label="Mostrar senha">◎</button>
+            </div>
+          </div>
+          <div class="login-options">
+            <label class="check-row"><input type="checkbox" checked /> Lembrar dispositivo</label>
+            <button type="button" class="link-button" data-action="forgot-password">Esqueci a senha</button>
+          </div>
+          <button class="primary-button login-submit" type="submit">Acessar conta</button>
+          <button class="secondary-button login-submit" type="button" id="demoLogin">Entrar como demo</button>
+        </form>
+        <div class="security-strip">
+          <span>MK Token ativo</span>
+          <span>Criptografia TLS</span>
+          <span>Biometria pronta</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="app-shell" id="app">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">mk</div>
+          <div>
+            <strong>MK Bank</strong>
+            <span>Private digital</span>
+          </div>
+        </div>
+
+        <nav class="nav-list" id="navList"></nav>
+
+        <div class="manager-card">
+          <div class="manager-avatar">AL</div>
+          <div>
+            <strong>Aline Costa</strong>
+            <span>Gerente prime</span>
+          </div>
+          <button class="icon-button" type="button" data-action="open-support" aria-label="Abrir atendimento">?</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Abrir menu">☰</button>
+          <div class="topbar-title">
+            <span id="todayLabel"></span>
+            <h1 id="viewTitle">Painel</h1>
+          </div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="globalSearch" type="search" placeholder="Buscar transacao, contato ou servico" />
+            </label>
+            <button class="icon-button" id="themeToggle" type="button" aria-label="Alternar tema">◐</button>
+            <button class="profile-button" type="button" data-action="open-profile">
+              <span class="profile-avatar">MR</span>
+              <span>Marina Ribeiro</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="content" id="content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <dialog class="modal" id="modal">
+      <div class="modal-head">
+        <div>
+          <span id="modalKicker"></span>
+          <h2 id="modalTitle"></h2>
+        </div>
+        <button class="icon-button" id="closeModal" type="button" aria-label="Fechar">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
